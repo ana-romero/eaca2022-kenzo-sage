@@ -1,6 +1,6 @@
 # Dockerfile for binder
 
-FROM sagemath/sagemath:8.8
+FROM sagemath/sagemath:9.1
 
 # Copy the contents of the repo in ${HOME}
 COPY --chown=sage:sage . ${HOME}
@@ -20,7 +20,7 @@ RUN sage -ecl < compile.lisp
 RUN mv kenzo--all-systems.fasb ${HOME}/sage/local/lib/ecl/kenzo.fas
 WORKDIR ${HOME}
 COPY kenzo.py sage/src/sage/interfaces/
-COPY kenzo.py sage/local/lib/python2.7/site-packages/sage/interfaces/
+COPY kenzo.py sage/local/lib/python3.7/site-packages/sage/interfaces/
 # RUN ls -l sage/src/sage/interfaces/
 # WORKDIR sage
 # RUN apt-get install -y make 
