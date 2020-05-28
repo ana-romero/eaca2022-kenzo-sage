@@ -38,11 +38,6 @@ from sage.homology.chain_complex import ChainComplex
 from sage.homology.simplicial_set import AbstractSimplex, SimplicialSet
 
 from sage.libs.ecl import EclObject, ecl_eval, EclListIterator
-from sage.misc.package import installed_packages, PackageNotFoundError
-
-
-if not 'kenzo' in installed_packages():
-    raise PackageNotFoundError('kenzo')
 
 # Redirection of ECL and Maxima stdout to /dev/null
 # This is also done in the Maxima library, but we
