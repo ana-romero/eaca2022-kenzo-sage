@@ -17,19 +17,16 @@ RUN git clone https://github.com/miguelmarco/kenzo/
 WORKDIR kenzo
 RUN git checkout testing
 RUN sage -ecl < compile.lisp
-RUN ls -l
 RUN mv kenzo--all-systems.fasb ${HOME}/sage/local/lib/ecl/kenzo.fas
+RUN mv kenzo--all-systems.fasb ${HOME}/sage/local/lib64/ecl/kenzo.fas
 WORKDIR ${HOME}
-RUN ls -l
-RUN ls -l sage
 RUN ls -l sage/sage
-# COPY kenzo.py src/sage/interfaces/
-# COPY kenzo.py local/lib/python3.7/site-packages/sage/interfaces/
-
-# RUN ls -l sage/src/sage/interfaces/
+COPY kenzo.py sage/src/sage/interfaces/
+COPY kenzo.py sage/local/lib/python3.7/site-packages/sage/interfaces/
+COPY kenzo.py sage/local/lib64/python3.7/site-packages/sage/interfaces/
 # WORKDIR sage
 # RUN apt-get install -y make 
 # RUN sage -br
 
-# WORKDIR ${HOME}
+WORKDIR ${HOME}
 user 1001
