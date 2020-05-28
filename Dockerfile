@@ -5,7 +5,6 @@ FROM sagemath/sagemath:9.0
 # Copy the contents of the repo in ${HOME}
 COPY --chown=sage:sage . ${HOME}
 
-RUN sage -i kenzo
 RUN sage -pip install jupyterlab
 RUN sage -pip install RISE
 ARG SSL_KEYSTORE_PASSWORD
