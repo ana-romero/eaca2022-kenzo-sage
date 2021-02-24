@@ -9,7 +9,7 @@ COPY --chown=sage:sage . ${HOME}
 # RUN sage -pip install RISE
 ARG SSL_KEYSTORE_PASSWORD
 USER root
-# RUN apt-get update
+RUN apt-get update
 # RUN apt-get install -y apt-utils
 # RUN apt-get install -y make
 RUN apt-get install -y git 
