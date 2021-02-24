@@ -22,6 +22,8 @@ WORKDIR ${HOME}
 RUN ls -l sage/sage
 COPY kenzo.py sage/src/sage/interfaces/
 COPY kenzo.py sage/local/lib/python3.7/site-packages/sage/interfaces/
+COPY kenzo_interfaces.py sage/src/sage/features/kenzo.py
+COPY kenzo_interfaces.py sage/local/lib/python3.7/site-packages/sage/features/kenzo.py
 # WORKDIR sage
 # RUN apt-get install -y make 
 # RUN sage -br
