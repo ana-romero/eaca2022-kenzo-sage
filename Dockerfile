@@ -7,7 +7,7 @@ COPY --chown=sage:sage . ${HOME}
 
 RUN sage -pip install jupyterlab
 RUN sage -pip install RISE
-RUN pip3 install --upgrade --user nbconvert
+RUN sage -pip install nbconvert==5.4.1
 ARG SSL_KEYSTORE_PASSWORD
 USER root
 RUN apt-get update
