@@ -1,6 +1,6 @@
 # Dockerfile for binder
 
-FROM sagemath/sagemath:latest
+FROM sagemath/sagemath:9.5
 
 # Copy the contents of the repo in ${HOME}
 COPY --chown=sage:sage . ${HOME}
